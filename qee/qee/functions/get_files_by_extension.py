@@ -2,7 +2,7 @@ import os
 import glob
 
 
-def read_files_by_extension(folder_path: str, extension: str = None):
+def get_files_by_extension(folder_path: str, extension: str = None) -> list[str]:
     """
     The function is intended to read files from a folder by extension
 
@@ -24,5 +24,5 @@ def read_files_by_extension(folder_path: str, extension: str = None):
 
     # Create a list of files with the pattern that matches the extension
     files = glob.glob(pattern_fetch)
-    for file_name in files:
-        print(file_name)
+
+    return files

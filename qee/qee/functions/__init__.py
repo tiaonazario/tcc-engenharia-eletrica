@@ -1,1 +1,1 @@
-from .read_files_by_extension import read_files_by_extension
+from .get_files_by_extension import get_files_by_extension
