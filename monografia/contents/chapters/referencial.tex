@@ -279,10 +279,35 @@ Assim como os outros limites, para o PRODIST deve ser calculado o percentil 95 p
   \centering
   \caption{Limites para o indicador de desequilíbrio de tensão}
   \label{tab:limites_desequilibrio_tensao}
-  \begin{tabular}{@{}lll@{}}
+  \begin{tabular}{@{}ccc@{}}
   \toprule
   \textbf{Indicador} & \textbf{$V_n \leq  2,3 kV$} & \textbf{$2,3 kV < V_n  < 230 kV$} \\ \midrule
   $FD95\%$ & $3,00\%$ & $2,00\%$ \\ \bottomrule
+  \end{tabular}
+  \fonte{Adaptado de \cite{ref:ANEEL2021}.}
+\end{table}
+
+\subsection{Flutuação de tensão}
+
+Quando ocorre mudanças repentinas nos valores de pico ou eficazes da tensão, caracteriza-se esse fenômeno como flutuação de tensão. Para o PRODIST, o indicadores de flutuação são o $P_{st}$, $P_{lt}$ e $P{st}95\%$, com o ultimo sendo o indicador utilizado para verificação do desempenho do sistema, podendo ser calculado pela \autoref{eq:pst} \cite{ref:ANEEL2021}.
+
+\begin{equation}
+P_{st}=\sqrt{0,0314 P_{0,1}+0,0525 P_1+0,0657 P_3+0,28 P_{10}+0,08 P_{50}}
+\label{eq:pst}
+\end{equation}
+
+Onde, os valores de P, determinam o nível de flutuação de tensão que foi ultrapassado no percentual do tempo referente ao seu indicador \cite{ref:ANEEL2021}.
+
+O limite para o indicador de flutuação está determinado pela \autoref{tab:limites_flutuacao_tensao}.
+
+\begin{table}[H]
+  \centering
+  \caption{Limites para o indicador de flutuação de tensão}
+  \label{tab:limites_flutuacao_tensao}
+  \begin{tabular}{@{}cccc@{}}
+  \toprule
+  \textbf{Indicador} & \textbf{$V_n \leq  2,3 kV$} & \textbf{$2,3 kV < V_n  < 69 kV$} & \textbf{$69 kV \leq V_n  < 230 kV$} \\ \midrule
+  $P{st}95\%$ & $1,0 pu$ & $1,5 pu$ & $2,0 pu$ \\ \bottomrule
   \end{tabular}
   \fonte{Adaptado de \cite{ref:ANEEL2021}.}
 \end{table}

@@ -12,9 +12,23 @@ A linguagem Python foi escolhida por ser de fácil manuseio e possuir grandes va
 
 Para implementação da rotina foi escolhido utilizar uma abordagem modular e composta por classes, facilitando a organização e manutenção do código. A arquitetura geral pode ser dividida em 3 partes principais: a interface gráfica, as classes para cálculo dos indicadores e uma classe geral de controle das análises dos indicadores.
 
+A \autoref{fig:qee_uml} mostra um diagrama UML (\textit{Unified Modeling Language}) para a arquitetura de classes desenvolvidas.
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de classes UML para a rotina Python}
+	\label{fig:qee_uml}
+	\includegraphics[width=16cm]{illustrations/figures/qee_uml.pdf}
+	\fonte{Autoria própria}
+\end{figure}
+
+As classes na \autoref{fig:qee_uml}. A maior classe (\textit{Analysis}) é a principal, responsável pela conexão da rotina com a interface gráfica. As demais classes, respectivamente são: \textit{VoltageVariation} para calculo do indicador de variação de tensão; \textit{PowerFactor} para analise do fator de potência; \textit{Harmonics} para determinar os indicadores de distorções harmônicas; \textit{VoltageImbalance} para calculo do fator de desequilíbrio de tensão e; \textit{Frequency} para determinar a classificação da variação de frequência.
+
+O indicador de flutuação de tensão é determinado pela função \textit{flicker} dentro da classe principal.
+
 \subsection{Implementação das classes}
 
-Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo 8 PRODIST, onde cada uma fica responsável por realizar os cálculos específicos para seu indicador. As classes foram desenvolvidas para os indicadores:
+Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo 8 PRODIST, com exceção para o indicador de flutuação de tensão que é calculado dentro da classe principal, onde cada uma fica responsável por realizar os cálculos específicos para seu indicador. As classes foram desenvolvidas para os indicadores:
 
 \begin{itemize}
   \item variação de tensão (DRC e DRP);
@@ -24,7 +38,7 @@ Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo
   \item variação de frequência: verificar se os valores das frequências estão dentro da faixa adequada.
 \end{itemize}
 
-A classe geral de controle das análises age como um intermediário entre a interface gráfica e as classes que calculam os indicadores, capitando os parâmetros de entrada fornecidos pela interface e selecionado qual classe de indicador será instanciada.
+A classe geral de controle das análises age como um intermediário entre a interface gráfica e as classes que calculam os indicadores, capitando os parâmetros de entrada fornecidos pela interface e selecionando qual classe de indicador será instanciada.
 
 \subsection{Uso de bibliotecas específicas}
 
@@ -47,7 +61,7 @@ Foi desenvolvido uma estrutura modular para geração da interface gráfica atra
 
 A interface gráfica permite que o usuário interaja com a rotina criada, importando uma planilha CSV ou XLS, para uma tabela e selecione os parâmetros que deseja para calcular os indicadores.
 
-A interface consegue visualizar gráficos das tensões medidas e gerar um relatório em pdf com os valores dos indicadores calculados, além de salvar os valores dos indicadores em formatos diferentes, seja TXT, JSON, CSV ou XLS.
+A interface consegue visualizar gráficos das tensões medidas e gerar um relatório em pdf com os valores dos indicadores calculados, além de salvar os valores dos indicadores em formatos diferentes, seja TXT, PDF, CSV ou XLS.
 
 \subsection{Layout prévio}
 
