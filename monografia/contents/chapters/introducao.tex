@@ -1,0 +1,44 @@
+\chapter{INTRODUÇÃO}
+
+Com o passar do tempo o uso de energia elétrica tornou se imprescindível, pois vários equipamentos e meios de produções dependem dessa tecnologia. A evolução dos dispositivos eletrônicos sensíveis, como televisores, celulares, e até mesmo o surgimento de carros elétricos e outros meios de produção em grande escala, exigem uma energia de qualidade, sem interrupções ou variações de tensão relevantes. Sendo assim, faz se necessário um controle e verificação da qualidade da energia elétrica utilizada.
+
+Para a garantia desse controle são adotados procedimentos, regulatórios, denominados pela Agência Nacional de Energia Elétrica (ANEEL) de Procedimentos de Distribuição de Energia Elétrica no Sistema Elétrico Nacional (PRODIST), no qual o modulo 8 se dedica à manutenção da qualidade da energia elétrica (QEE).
+
+O PRODIST visa avaliar a qualidade da energia, levando em consideração, a qualidade do produto e qualidade do serviço. A qualidade do produto aborda os fenômenos, os limites e indicadores que possuem relação com a conformidade de tensão em regime permanente, além das perturbações na forma de onda de tensão. Por outro lado, a qualidade do serviço define limites e etapas relacionadas aos indicadores de continuidade e tempos de atendimento, bem como os conjuntos de unidades consumidoras \cite{ref:ANEEL2021}.
+
+Atualmente, sistemas fotovoltaicos estão sendo amplamente utilizados por unidades consumidoras. Esses sistemas utilizam inversores de frequência, que podem vir a promover problemas de distorção na alimentação da rede elétrica devido a presença de componentes harmônicas \cite{ref:dugan_2004}.
+
+Para a avaliação da QEE, são colhidos dados por um analisador de qualidade de energia, que devem ser importados por um software para a análise das tensões e a presença de harmônicos, comparando-os com valores definidos pelo Modulo 8 do PRODIST. Muito embora esses softwares permitam uma análise visual dos dados, em sua maioria, não são capazes de analisar automaticamente os limites e indicadores, e produzir um diagnóstico da QEE com base no PRODIST.
+
+Sendo assim, o presente trabalho propõe desenvolver uma rotina, em linguagem Python, com uma interface gráfica para automatização da verificação dos parâmetros obtidos por um analisador de QEE de acordo com os valores estabelecidos pela ANEEL, gerando para o usuário um relatório com a análise da QEE do local investigado.
+
+\section{MOTIVAÇÃO}
+
+Levando em consideração que hoje em dia a energia elétrica está cada vez mais presente e que vários dispositivos são sensíveis a variações nas formas de onda de tensão e corrente, faz-se necessário que as concessionárias de energia se adequem aos limites e índices impostos pela ANEEL. Dessa forma, a análise de QEE é de suma importância para o fornecimento de energia aos consumidores de forma adequada e dentro dos padrões necessários ao funcionamento correto de seus equipamentos.
+
+Um dos desafios na utilização dos \textit{softwares} disponíveis para a análise de QEE, como o \textit{Topview}, é a automatização da comparação dos valores obtidos pelo analisador de qualidade de energia com os valores indicados pelo Modulo 8 do PRODIST. Além disso, o uso dos dados fornecidos pelo analisador não é tão intuitivo, sendo necessário a interpretação desses parâmetros, aumentando a possibilidade da inserção do erro humano na análise. Sendo assim, busca-se reduzir a influência do operador (humano) no processo por meio da automatização por rotinas computacionais.
+
+O avanço tecnológico permite, a automatização do processo de importação dos dados coletados pelo analisador de qualidade de energia e bem como a análise dos limites e indicadores de acordo com o Modulo 8 do PRODIST.
+
+Portanto, desenvolver uma rotina para solucionar essa deficiência pode auxiliar a análise de QEE e o uso do próprio analisador em trabalhos futuros. Propõe-se então, neste trabalho, a construção de uma rotina em Python com uma interface gráfica para automatização da tarefa de comparação e verificação dos limites e indicadores, com base nos dados gerados pelo analisador de qualidade de energia e no Modulo 8 do PRODIST.
+
+\section{OBJETIVOS}
+
+\subsection{Geral}
+
+Desenvolver uma rotina com interface gráfica, em linguagem Python, para elaboração de um relatório para caracterização da situação da qualidade de energia elétrica de uma unidade consumidora.
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+  \item Compreender o funcionamento da análise da qualidade de energia elétrica;
+  \item ler os dados obtidos pelo analisador de qualidade de energia;
+  \item gerar uma rotina em Python para elaboração de uma análise de QEE;
+  \item criar uma interface gráfica que implemente a rotina gerada;
+  \item elaborar teste para verificação do funcionamento do código desenvolvido;
+  \item fazer simulações com valores reais para fins de comprovação do funcionamento da rotina desenvolvida.
+\end{itemize}
+
+\section{ORGANIZAÇÃO}
+
+O sistema de organização desse trabalho estabelece uma divisão em 5 capítulos. O primeiro capítulo apresenta uma introdução do estudo da análise de QEE, além de detalhar a motivação e os objetivos desse trabalho. No segundo são apresentados os termos técnicos e a fundamentação teórica a respeito da qualidade de energia. A metodologia utilizada na elaboração desse trabalho é apresentada no terceiro capítulo e, no quarto, os resultados obtidos são demostrados e analisados. Por último, o quinto capítulo apresenta as principais conclusões acerca do projeto desenvolvido.

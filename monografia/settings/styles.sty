@@ -1,0 +1,274 @@
+\ProvidesPackage{settings/styles}
+
+% ====================================================
+% Definir as variáveis
+% ====================================================
+% Logo
+\providecommand{\imprimirlogoinstituicao}{}
+\newcommand{\logoinstituicao}[2]{\renewcommand{\imprimirlogoinstituicao}{\includegraphics[width={#1}\textwidth]{#2}}}
+% Departamento
+\providecommand{\imprimirdepartamento}{}
+\newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
+% Curso
+\providecommand{\imprimircurso}{}
+\newcommand{\curso}[1]{\renewcommand{\imprimircurso}{#1}}
+% Dia
+\providecommand{\imprimirdia}{}
+\newcommand{\dia}[1]{\renewcommand{\imprimirdia}{#1}}
+% Mes
+\providecommand{\imprimirmes}{}
+\newcommand{\mes}[1]{\renewcommand{\imprimirmes}{#1}}
+% Ano
+\providecommand{\imprimirano}{}
+\newcommand{\ano}[1]{\renewcommand{\imprimirano}{#1}}
+% Folha Aprovacao
+\providecommand{\imprimirfolhaaprovacao}{}
+\newcommand{\folhaaprovacao}[1]{\renewcommand{\imprimirfolhaaprovacao}{#1}}
+% Orientador
+\providecommand{\imprimirtituloorientador}{}
+\newcommand{\tituloorientador}[1]{\renewcommand{\imprimirtituloorientador}{#1}}
+% Professor um
+\providecommand{\imprimirprofessorum}{}
+\newcommand{\professorum}[1]{\renewcommand{\imprimirprofessorum}{#1}}
+\providecommand{\imprimirtituloprofessorum}{}
+\newcommand{\tituloprofessorum}[1]{\renewcommand{\imprimirtituloprofessorum}{#1}}
+% Professor dois
+\providecommand{\imprimirprofessordois}{}
+\newcommand{\professordois}[1]{\renewcommand{\imprimirprofessordois}{#1}}
+\providecommand{\imprimirtituloprofessordois}{}
+\newcommand{\tituloprofessordois}[1]{\renewcommand{\imprimirtituloprofessordois}{#1}}
+
+\newenvironment{minhapagina}
+  {\clearpage\thispagestyle{empty}}
+  {\clearpage}
+
+\newenvironment{codigo}
+{\begin{figure}[H]\centering\vspace*{-12pt}}
+{\fonte{Autoria própria.}\end{figure}}
+
+\graphicspath{ {./illustrations/figures/} }
+
+% Define a numeração das equações de forma sequencial
+\counterwithout{equation}{chapter}
+% Retira o espaçamento entre a legenda e a figura
+\setlength{\abovecaptionskip}{0pt}
+
+% ======================================================
+% Redefinindo o tamanho das fontes dos titulos.
+% ======================================================
+% Capítulos em Bold e Maiúsculas
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+% Seções em  Maiúsculas apenas
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+% Subseções em Bold apenas
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+% Nome para os códigos no texto
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{LISTA DE CÓDIGOS}
+
+\renewcommand\l@lstlisting[2]{{\normalfont\@dottedtocline{1}{1.5em}{2em}{Código~#1}{#2}}}
+\makeatother
+
+% Criar estrutura para imagens como códigos
+
+% =================================================
+% Sumário
+% =================================================
+
+% \setlength{\cftbeforechapterskip}{1em \@plus\p@}
+% \cftsetindents{chapter}{0pt}{1em}
+% \cftsetindents{section}{0pt}{2em}
+% \cftsetindents{subsection}{0pt}{3em}
+\renewcommand{\cftchapterindent}{0pt}
+\renewcommand{\cftsectionindent}{0pt}
+\renewcommand{\cftsubsectionindent}{0pt}
+\renewcommand\cftbeforepartskip{1em}
+\renewcommand{\cftsubsectionfont}{\bfseries}
+
+
+% Define os títulos das listas
+\addto\captionsbrazil{%
+% Ajusta nomes padrões do babel
+    \renewcommand{\listadesiglasname}{LISTA DE ABREVIATURAS E SIGLAS}
+    \renewcommand{\listadesimbolosname}{LISTA DE S\'{I}MBOLOS}
+    \renewcommand{\listfigurename}{LISTA DE FIGURAS}
+    \renewcommand{\listtablename}{LISTA DE TABELAS}
+    \renewcommand{\indexname}{\'{I}NDICE REMISSIVO}
+% Ajusta nomes usados com a macro \autoref
+    \renewcommand{\pageautorefname}{p\'agina}
+    \renewcommand{\sectionautorefname}{Se\c{c}\~ao}
+    \renewcommand{\subsectionautorefname}{Subse\c{c}\~ao}
+    \renewcommand{\subsubsectionautorefname}{Subsubse\c{c}\~ao}
+    \renewcommand{\paragraphautorefname}{Subse\c{c}\~ao}
+}
+
+% ======================================================
+% Configurações gerais
+% ======================================================
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.0cm}
+\setlist{noitemsep, leftmargin=2cm, topsep=0pt, parsep=0pt, partopsep=0pt}
+% \frenchspacing
+
+% ======================================================
+% Imprimir capa
+% ======================================================
+\renewcommand{\imprimircapa}{%
+\begin{minhapagina}
+  \begin{center}
+		\begin{figure}
+			\centering
+			\imprimirlogoinstituicao
+		\end{figure}
+
+		\MakeUppercase{\imprimirinstituicao} \\
+		\MakeUppercase{\imprimirdepartamento} \\
+		\MakeUppercase{\imprimircurso}
+
+		\vspace{1cm}
+		\MakeUppercase{\imprimirautor}
+
+		\vspace{4cm}
+		\MakeUppercase{\textbf{\imprimirtitulo}}
+
+		\vfill
+
+		\MakeUppercase{\imprimirlocal} \\
+		\MakeUppercase{\imprimirdata}
+
+	\end{center}
+\end{minhapagina}
+}
+
+
+% ======================================================
+% Imprimir folha de rosto
+% ======================================================
+
+\renewcommand{\imprimirfolhaderosto}{%
+\begin{minhapagina}
+  \begin{center}
+		\MakeUppercase{\imprimirautor}
+
+		\vfill
+		\MakeUppercase{\textbf{\imprimirtitulo}}
+
+    \vfill
+    \hspace*{\fill}\parbox[b]{.5\textwidth}{%
+      \linespread{1}\selectfont
+    \imprimirpreambulo \\
+    \\
+    \\
+    Orientadora: \imprimirorientador \\
+    }
+
+		\vfill
+		\MakeUppercase{\imprimirlocal} \\
+		\MakeUppercase{\imprimirdata}
+
+	\end{center}
+\end{minhapagina}
+}
+
+% ======================================================
+% Imprimir folha de aprovação
+% ======================================================
+\renewcommand{\imprimirfolhaaprovacao}{%
+\begin{minhapagina}
+  \begin{center}
+		\MakeUppercase{\imprimirautor}
+
+		\vfill
+		\MakeUppercase{\textbf{\imprimirtitulo}}
+
+    \vfill
+    \hspace*{\fill}\parbox[b]{.5\textwidth}{%
+      \linespread{1}\selectfont
+    \imprimirpreambulo \\
+    }
+
+		\vfill
+		\begin{flushleft}
+      Defendido em \imprimirdia\ de \imprimirmes\ de \imprimirano.
+      \\
+      \vspace*{0.3cm}
+      BANCA EXAMININADORA:
+    \end{flushleft}
+
+    \vfill
+    \assinatura{\imprimirorientador \\ \imprimirtituloorientador}
+    \vspace*{\onelineskip}
+
+    \assinatura{\imprimirprofessorum \\ \imprimirtituloprofessorum}
+    \vspace*{\onelineskip}
+
+    \assinatura{\imprimirprofessordois \\ \imprimirtituloprofessordois}
+    \vfill    
+
+	\end{center}
+\end{minhapagina}
+}
+
+
+% ======================================================
+% Códigos
+% ======================================================
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.8,0,0.3}
+\definecolor{orange}{rgb}{1,0.4,0}
+\definecolor{lightlightgray}{rgb}{.95,.95,.95}
+\definecolor{lightgray}{HTML}{f8f9fa}
+\definecolor{lightgray2}{rgb}{.85,.85,.85}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+
+
+\newcommand{\includecode}[5][C]{\lstinputlisting[caption=#2, label=#3, escapechar=, style=custom#1, firstnumber=#4]{#5}}
+
+
+\lstset{
+  numberbychapter=false,
+  rulesepcolor=\color{gray},
+  numbers=left,
+  xleftmargin=0.1\linewidth,
+  xrightmargin=3mm
+}
+
+\lstdefinestyle{customPython}{
+    language=Python,
+    breaklines=true,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{purple},
+    stringstyle=\color{green},
+    showstringspaces=false,
+}
+
+% Python
+\lstdefinelanguage{Python}{
+    aboveskip=15pt,
+    keywords={and, self, as, assert, break, class, continue, def, del, elif, else, except, False, finally, for, from, global, if, import, in, is, lambda, None, nonlocal, not, or, pass, raise, return, True, try, while, with, yield},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={async, await},
+    ndkeywordstyle=\color{darkgray}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=true,
+    comment=[l]{\#},
+    morecomment=[s]{'''}{'''},
+    morecomment=[s]{"""}{"""},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{green}\ttfamily,
+    morestring=[b]',
+    morestring=[b]",
+    rulecolor=\color{lightgray2},
+    breaklines=true,
+    basicstyle=\footnotesize\ttfamily,
+    frame=single,
+    backgroundcolor=\color{lightgray},
+}
+
