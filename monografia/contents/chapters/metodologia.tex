@@ -22,13 +22,13 @@ A \autoref{fig:qee_uml} mostra um diagrama UML (\textit{Unified Modeling Languag
 	\fonte{Autoria própria}
 \end{figure}
 
-As classes na \autoref{fig:qee_uml}. A maior classe (\textit{Analysis}) é a principal, responsável pela conexão da rotina com a interface gráfica. As demais classes, respectivamente são: \textit{VoltageVariation} para calculo do indicador de variação de tensão; \textit{PowerFactor} para analise do fator de potência; \textit{Harmonics} para determinar os indicadores de distorções harmônicas; \textit{VoltageImbalance} para calculo do fator de desequilíbrio de tensão e; \textit{Frequency} para determinar a classificação da variação de frequência.
+A maior classe (\textit{Analysis}) é a principal, responsável pela conexão da rotina com a interface gráfica. As demais classes são, respectivamente: \textit{VoltageVariation} para cálculo do indicador de variação de tensão; \textit{PowerFactor} para análise do fator de potência; \textit{Harmonics} para determinar os indicadores de distorções harmônicas; \textit{VoltageImbalance} para cálculo do fator de desequilíbrio de tensão e; \textit{Frequency} para determinar a classificação da variação de frequência.
 
 O indicador de flutuação de tensão é determinado pela função \textit{flicker} dentro da classe principal.
 
 \subsection{Implementação das classes}
 
-Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo 8 PRODIST, com exceção para o indicador de flutuação de tensão que é calculado dentro da classe principal, onde cada uma fica responsável por realizar os cálculos específicos para seu indicador. As classes foram desenvolvidas para os indicadores:
+Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo 8 PRODIST, com exceção do indicador de flutuação de tensão que é calculado dentro da classe principal, em que cada uma fica responsável por realizar os cálculos específicos para seu indicador. As classes foram desenvolvidas para os indicadores:
 
 \begin{itemize}
   \item variação de tensão (DRC e DRP);
@@ -38,7 +38,7 @@ Foram desenvolvidas classes para cada tipo de indicador determinado pelo Módulo
   \item variação de frequência: verificar se os valores das frequências estão dentro da faixa adequada.
 \end{itemize}
 
-A classe geral de controle das análises age como um intermediário entre a interface gráfica e as classes que calculam os indicadores, capitando os parâmetros de entrada fornecidos pela interface e selecionando qual classe de indicador será instanciada.
+A classe geral de controle das análises age como um intermediário entre a interface gráfica e as classes que calculam os indicadores, captando os parâmetros de entrada fornecidos pela interface e selecionando qual classe de indicador será instanciada.
 
 \subsection{Uso de bibliotecas específicas}
 
@@ -59,13 +59,13 @@ Foi desenvolvido uma estrutura modular para geração da interface gráfica atra
 
 \subsection{Funcionalidades}
 
-A interface gráfica permite que o usuário interaja com a rotina criada, importando uma planilha CSV ou XLS, para uma tabela e selecione os parâmetros que deseja para calcular os indicadores.
+A interface gráfica permite que o usuário interaja com a rotina criada, importando uma planilha CSV ou XLS, para uma tabela e selecionando os parâmetros que deseja para calcular os indicadores.
 
-A interface consegue visualizar gráficos das tensões medidas e gerar um relatório em pdf com os valores dos indicadores calculados, além de salvar os valores dos indicadores em formatos diferentes, seja TXT, PDF, CSV ou XLS.
+A interface consegue visualizar gráficos das tensões medidas e gerar um relatório em PDF com os valores dos indicadores calculados, além de salvar os valores dos indicadores em formatos diferentes, seja TXT, PDF, CSV ou XLS.
 
 \subsection{Layout prévio}
 
-O layout prévio da interface segue a \autoref{fig:main_windown}, em que possui uma tabela, para mostrar os dados importados da planilha, e uma barra na lateral direita, onde conterá os resultados da análise dos indicadores.
+O layout prévio da interface segue a \autoref{fig:main_windown}, na qual observa-sa a presença de uma tabela para exibição dos dados importados da planilha, e uma barra na lateral direita, onde estão descritos os resultados da análise dos indicadores.
 
 \begin{figure}[H]
 	\centering
@@ -79,7 +79,7 @@ O layout prévio da interface segue a \autoref{fig:main_windown}, em que possui 
 
 \subsection{Analisador de qualidade}
 
-Existem vários modelos de analisadores de qualidade de energia, dentre eles o instrumento MINIPA modelo ET-5061C, é um analisador de rede construído pelo fabricante MINIPA respeitando a norma de segurança EN-61010. Esse dispositivo consegue visualizar em tempo real parâmetros elétricos, mostra sinais em forma de gráficos, histogramas, diagramas vetoriais e consegue salvar esses dados para que possam ser visualizados e analisados em outros softwares \cite{ref:minipa_2019}. Na \autoref{fig:analisador_qee} apresenta-se um exemplo desse modelo.
+Existem vários modelos de analisadores de qualidade de energia, dentre eles o instrumento MINIPA modelo ET-5061C, que é um analisador de rede construído pelo fabricante MINIPA respeitando a norma de segurança EN-61010. Esse dispositivo consegue visualizar em tempo real parâmetros elétricos, mostra sinais em forma de gráficos, histogramas, diagramas vetoriais e consegue salvar esses dados para que possam ser visualizados e analisados em outros softwares \cite{ref:minipa_2019}. Na \autoref{fig:analisador_qee} apresenta-se um exemplo desse modelo.
 
 \begin{figure}[H]
 	\centering

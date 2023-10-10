@@ -88,6 +88,11 @@
 \renewcommand\cftbeforepartskip{1em}
 \renewcommand{\cftsubsectionfont}{\bfseries}
 
+% Redefine Apêndice para Anexo
+\renewcommand{\appendixautorefname}{Anexo}
+% \renewcommand{\appendixname}{Anexo}
+% \renewcommand{\appendixpagename}{Anexos}
+% \renewcommand{\appendixtocname}{Anexos}
 
 % Define os títulos das listas
 \addto\captionsbrazil{%
@@ -162,8 +167,9 @@
       \linespread{1}\selectfont
     \imprimirpreambulo \\
     \\
+    Orientadora:\\
     \\
-    Orientadora: \imprimirorientador \\
+    \imprimirorientador \\
     }
 
 		\vfill
@@ -226,6 +232,8 @@
 \definecolor{lightgray}{HTML}{f8f9fa}
 \definecolor{lightgray2}{rgb}{.85,.85,.85}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
+% \definecolor{stringcolor}{HTML}{678D58}
+\definecolor{stringcolor}{HTML}{399E5A}
 
 
 \newcommand{\includecode}[5][C]{\lstinputlisting[caption=#2, label=#3, escapechar=, style=custom#1, firstnumber=#4]{#5}}
@@ -245,7 +253,7 @@
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{blue},
     commentstyle=\itshape\color{purple},
-    stringstyle=\color{green},
+    stringstyle=\color{stringcolor},
     showstringspaces=false,
 }
 
@@ -262,7 +270,7 @@
     morecomment=[s]{'''}{'''},
     morecomment=[s]{"""}{"""},
     commentstyle=\color{purple}\ttfamily,
-    stringstyle=\color{green}\ttfamily,
+    stringstyle=\color{stringcolor}\ttfamily,
     morestring=[b]',
     morestring=[b]",
     rulecolor=\color{lightgray2},

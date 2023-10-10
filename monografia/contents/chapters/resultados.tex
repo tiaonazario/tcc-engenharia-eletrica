@@ -1,6 +1,6 @@
 \chapter{RESULTADOS}
 
-Nesse capítulo serão abordados os resultados obtidos perante a utilização do código desenvolvido com alimentação dos dados colhidos pelo analisador de qualidade de energia.
+Nesse capítulo serão abordados os resultados obtidos com a utilização do código desenvolvido sendo alimentado dos dados colhidos pelo analisador de qualidade de energia.
 
 \section{ROTINA EM PYTHON}
 
@@ -13,7 +13,7 @@ O \autoref{cod:variacao_tensao} implementa a \autoref{eq:drp} e \autoref{eq:drc}
 \end{codigo}
 
 
-Para determinação da analise do fator de potência foi desenvolvida a classe do \autoref{cod:power_factor}. Essa classe classifica o fator de potência em crítico e adequado a depender se não estiver nos limites determinados pelo PRODIST.
+Para determinação e análise do fator de potência foi desenvolvida a classe do \autoref{cod:power_factor}. Essa classe classifica o fator de potência em crítico e adequado a depender dos limites determinados pelo PRODIST.
 
 \begin{codigo}
   \includecode[Python]{Classe para verificação do fator de potência}{cod:power_factor}{5}{illustrations/codes/power_factor.py}
@@ -21,11 +21,11 @@ Para determinação da analise do fator de potência foi desenvolvida a classe d
 
 A função principal da classe utilizada para determinar os indicadores de distorções harmônicas pode ser observada no \autoref{cod:harmonics}. Essa função percorre todos os harmônicos por meio de um \textit{loop for} para então determinar o indicador de acordo com as equações fornecidas pelo PRODIST.
 
+O \autoref{cod:voltage_imbalance} foi desenvolvido para determina o fator de desequilíbrio de tensão $FD$, por meio da aplicação da \autoref{eq:fd_2}.
+
 \begin{codigo}
   \includecode[Python]{Função para cálculo dos indicadores de distorções harmônicas}{cod:harmonics}{16}{illustrations/codes/harmonics.py}
 \end{codigo}
-
-O \autoref{cod:voltage_imbalance} foi desenvolvido para determina o fator de desequilíbrio de tensão $FD$, por meio da aplicação da \autoref{eq:fd_2}.
 
 \begin{codigo}
   \includecode[Python]{Função para cálculo do fator de desequilíbrio de tensão}{cod:voltage_imbalance}{9}{illustrations/codes/voltage_imbalance.py}
@@ -46,7 +46,7 @@ Para aplicação da análise de variação de frequência, foi desenvolvido o \a
 
 \section{DEMOSTRAÇÃO DA INTERFACE GRÁFICA}
 
-A \autoref{fig:tela_inicial} demostra a visão geral da interface gráfica desenvolvida.
+A \autoref{fig:tela_inicial} demostra a visão geral da interface gráfica desenvolvida. Observa-se uma barra de seleção de arquivo, destacada na \autoref{fig:barra_selecao}, e utilizada para digitar o caminho referente a planilha de dados, um botão para abrir o gerenciador de arquivos do sistema operacional e um botão para carregar o arquivo quando selecionado.
 
 \begin{figure}[H]
 	\centering
@@ -56,8 +56,6 @@ A \autoref{fig:tela_inicial} demostra a visão geral da interface gráfica desen
 	\fonte{Autoria própria.}
 \end{figure}
 
-Na \autoref{fig:tela_inicial}, observa-se uma barra de seleção de arquivo, \autoref{fig:barra_selecao}, utilizada para digitar o caminho referente a planilha de dados, um botão para abrir o gerenciador de arquivos do sistema operacional e um botão para carregar o arquivo quando selecionado.
-
 \begin{figure}[H]
 	\centering
 	\caption{Barra de seleção de arquivo}
@@ -66,7 +64,9 @@ Na \autoref{fig:tela_inicial}, observa-se uma barra de seleção de arquivo, \au
 	\fonte{Autoria própria.}
 \end{figure}
 
-A interface contém mensagens informativas, para situações de inconsistência em valores fornecidos e confirmações de ações realizadas, como pode ser observado na figura.
+A interface contém mensagens informativas, para situações de inconsistência em valores fornecidos e confirmações de ações realizadas, como pode ser observado na \autoref{fig:mensagens_informativas}.
+
+A \autoref{fig:moensagem_erro} mostra o exemplo para as mensagens de erros, enquanto \autoref{fig:moensagem_aviso} para mensagem de aviso e \autoref{fig:moensagem_informacao} para mensagens de informações.
 
 \begin{figure}[H]
 	\centering
@@ -93,9 +93,7 @@ A interface contém mensagens informativas, para situações de inconsistência 
 	\fonte{Autoria própria.}
 \end{figure}
 
-A \autoref{fig:moensagem_erro} mostra o exemplo para as mensagens de erros, enquanto \autoref{fig:moensagem_aviso} para mensagem de aviso e \autoref{fig:moensagem_informacao} para mensagens de informações.
-
-Quando for selecionada uma planilha, que seja aceita pela interface, seus dados aparecem na tabela de dados, como mostra \autoref{fig:tabela_carregada}.
+Quando for selecionada uma planilha adequada, aceita pela interface, os respectivos dados aparecem na tabela de dados, como mostra \autoref{fig:tabela_carregada}.
 
 \begin{figure}[H]
   \centering
@@ -117,7 +115,7 @@ A tabela da \autoref{fig:tabela_carregada} é a base para utilização da interf
 
 \subsection{Gerar gráfico}
 
-Nessa função é possível visualizar um gráfico contendo uma classificação das tensões em adequada, precária ou crítica. Ao clicar na função “Gerar gráfico”, sobre um parâmetro de tensão dentro da tabela, aparecerá uma caixa de seleção de nível de tensão, \autoref{fig:selecao_niveis_tensao}, para seleção da tensão de referência a qual a interface utiliza para verificar a classificação dos níveis de tensões.
+Nessa função é possível visualizar um gráfico contendo uma classificação das tensões em adequada, precária ou crítica. Ao clicar na função “Gerar gráfico”, sobre um parâmetro de tensão dentro da tabela, aparecerá uma caixa de seleção de nível de tensão (\autoref{fig:selecao_niveis_tensao}) para seleção da tensão de referência a qual a interface utiliza para verificar a classificação dos níveis de tensões.
 
 \begin{figure}[H]
   \centering
@@ -127,7 +125,7 @@ Nessa função é possível visualizar um gráfico contendo uma classificação 
   \fonte{Autoria própria.}
 \end{figure}
 
-A \autoref{fig:grafico_tensao} mostra uma janela com o gráfico gerado ao selecionar o nível de tensão. Onde, as demarcações para tensão adequada, precária e crítica, correspondem as corres da \autoref{fig:faixa_tensao}. Nessa janela também é possível editar e salvar o gráfico.
+A \autoref{fig:grafico_tensao} mostra uma janela com o gráfico gerado ao selecionar o nível de tensão, no qual as demarcações para tensão adequada, precária e crítica, correspondem as cores da \autoref{fig:faixa_tensao}. Nessa janela também é possível editar e salvar o gráfico.
 
 \begin{figure}[H]
   \centering
@@ -139,7 +137,7 @@ A \autoref{fig:grafico_tensao} mostra uma janela com o gráfico gerado ao seleci
 
 \subsection{Variação de tensão}
 
-Para uma análise dos valores de tensões demostrado na \autoref{fig:grafico_tensao}, o PRODIST determina os indicadores de variação de tensão DRP e DRC. Partindo disso, a próxima função da interface é a “Variação de tensão”, em que o usuário precisa selecionar os 3 níveis de tensão, seja tensões de fase ou tensões de linha, como mostra a \autoref{fig:selecao_niveis_tensao_valores}.
+Para uma análise dos valores de tensões demostrado na \autoref{fig:grafico_tensao}, o PRODIST determina os indicadores de variação de tensão DRP e DRC. Partindo disso, a função seguinte da interface é a “Variação de tensão”, em que o usuário precisa selecionar os 3 níveis de tensão, seja tensões de fase ou tensões de linha, como mostra a \autoref{fig:selecao_niveis_tensao_valores}.
 
 \begin{figure}[H]
   \centering
@@ -149,7 +147,7 @@ Para uma análise dos valores de tensões demostrado na \autoref{fig:grafico_ten
   \fonte{Autoria própria.}
 \end{figure}
 
-Na barra “Análises”, a direita da interface na \autoref{fig:exemplo_variacao_tensao}, aparece uma lista com as análises que já foram feitas. No qual possui as funções de remover e salvar um resultado específico, ou salvar toda a análise.
+Na barra “Análises”, à direita da interface na \autoref{fig:exemplo_variacao_tensao}, aparece uma lista com as análises que já foram feitas, possuindo, além disso, as funções de remover e salvar um resultado específico, ou salvar toda a análise.
 
 \begin{figure}[H]
   \centering
@@ -210,7 +208,7 @@ A função "Flutuação de tensão" determina o indicador $Pst95\%$, \autoref{fi
 
 \subsection{Variação de frequência}
 
-“Variação de frequência” é a última função da interface. Na qual expressa a classificação da frequência em alta, adequada e baixa (\autoref{fig:exemplo_vf}).
+“Variação de frequência” é a última função da interface. Ela expressa a classificação da frequência em alta, adequada e baixa (\autoref{fig:exemplo_vf}).
 
 \begin{figure}[H]
   \centering
@@ -220,11 +218,22 @@ A função "Flutuação de tensão" determina o indicador $Pst95\%$, \autoref{fi
   \fonte{Autoria própria.}
 \end{figure}
 
-\section{Análise dos dados}
+\section{ANÁLISE DOS DADOS}
+
+Todos os resultados expostos nessa seção foram obtidos através da utilização de duas amostras de dados, coletadas pelo mesmo analisador de dados e dispostos nos Apêndices desse trabalho. Sendo:
+
+\begin{itemize}
+  \item \autoref{ap:graficos_a1}: gráficos das tensões com classificação - amostra 1;
+  \item \autoref{ap:graficos_a2}: gráficos das tensões com classificação - amostra 2;
+  \item \autoref{ap:analise_a1} - relatório de análise de QEE gerado pela rotina computacional -
+  amostra 1;
+  \item \autoref{ap:analise_a2} - relatório de análise de QEE gerado pela rotina computacional -
+  amostra 2;
+\end{itemize}
 
 \subsection{Variação de tensão}
 
-Nessa etapa foram efetuadas análises para as tensões de fase e linha. Em que, foram determinados os indicadores DRP e DRC para as duas amostras injetadas no \textit{software}.
+Nessa etapa foram efetuadas análises para as tensões de fase e linha, nais quais foram determinados os indicadores DRP e DRC para as duas amostras injetadas no \textit{software}.
 
 Os indicadores para tensão de fase foram dispostos na \autoref{tab:vt_fase_a1} e \autoref{tab:vt_fase_a2}.
 
@@ -258,9 +267,9 @@ Os indicadores para tensão de fase foram dispostos na \autoref{tab:vt_fase_a1} 
   \fonte{Autoria própria.}
 \end{table}
 
-Analisando essas duas amostras pode se notar que apenas a amostra 2 (\autoref{tab:vt_fase_a2}) conseguiu ficar dentro dos limites determinados pelo PRODIST.
+Analisando essas duas amostras pode se notar que apenas a amostra 2 (\autoref{tab:vt_fase_a2}) conseguiu ficar dentro dos limites determinados pelo PRODIST. 
 
-De maneira análoga as tensões de fase, foram determinados os indicadores para tensões de linha conforme \autoref{tab:vt_linha_a1} e \autoref{tab:vt_linha_a2}.
+De maneira análoga as tensões de fase, foram determinados os indicadores para tensões de linha conforme \autoref{tab:vt_linha_a1} e \ref{tab:vt_linha_a2}.
 
 \begin{table}[H]
   \centering
@@ -294,7 +303,7 @@ De maneira análoga as tensões de fase, foram determinados os indicadores para 
 
 \subsection{Fator de potência}
 
-Para o fator de potência foi determinado a classificação conforme \autoref{tab:fp_amostra1}.
+Para o fator de potência a única amostra utilizada consistiu na amostra 1, isso porque a amostra 2 correspondia a uma medição antiga que não possuía os valores de fator de potência. Determinando assim a classificação conforme \autoref{tab:fp_amostra1}.
 
 \begin{table}[H]
   \centering
@@ -315,7 +324,7 @@ Os valores médios, máximos e mínimos dispostos na \autoref{tab:fp_amostra1}, 
 
 \subsection{Distorções harmônicas}
 
-Os indicadores de distorções harmônicas encontrados para amostra 1 foram disposto na \autoref{tab:dh_amostra1}, onde V1, V2 e V3 são as tensões referentes aos harmônicos.
+Os indicadores de distorções harmônicas encontrados para amostra 1 foram dispostos na \autoref{tab:dh_amostra1}, onde V1, V2 e V3 são as tensões referentes aos harmônicos. Observa-se, em ambos os casos, que os valores estão dentro do estabelecido pelo PRODIST.
 
 \begin{table}[H]
   \centering
@@ -355,7 +364,7 @@ Para amostra 2 os indicadores estão presentes na \autoref{tab:dh_amostra2}.
 
 \subsection{Desequilíbrio de tensão}
 
-A \autoref{tab:fd_amostra1} contém os fatores de desequilíbrio de tensão calculados para os valores médios, máximos e mínimos das tensões de linha da amostra 1.
+A \autoref{tab:fd_amostra1} contém os fatores de desequilíbrio de tensão calculados para os valores médios, máximos e mínimos das tensões de linha da amostra 1. Mais uma vez, em ambos os casos, os indicadores estão dentro dos limites estabelecidos pelo PRODIST.
 
 \begin{table}[H]
   \centering
@@ -389,7 +398,7 @@ Para amostra 2 os indicadores podem ser observados na \autoref{tab:fd_amostra2}.
 
 \subsection{Flutuação de tensão}
 
-Para esse indicador, foram encontrados valores para as 3 tensões, como mostra a \autoref{tab:ft_amostra1} e \autoref{tab:ft_amostra2}.
+Para esse indicador, foram encontrados valores para as 3 tensões, como mostra a \autoref{tab:ft_amostra1} e \autoref{tab:ft_amostra2}. Mais uma vez, em ambos os casos, os indicadores estão dentro dos limites estabelecidos pelo PRODIST.
 
 \begin{table}[H]
   \centering
@@ -422,7 +431,7 @@ Para esse indicador, foram encontrados valores para as 3 tensões, como mostra a
 
 \subsection{Variação de frequência}
 
-A amostra 1 obteve as seguintes classificações, \autoref{tab:vf_amostra1}, em que os valores médios, máximos e mínimos, correspondem as porções percentuais do total de amostras para cada classificação.
+A amostra 1 obteve as classificações apresentadas na \autoref{tab:vf_amostra1}, em que os valores médios, máximos e mínimos, correspondem as porções percentuais do total de amostras para cada classificação.
 
 \begin{table}[H]
   \centering

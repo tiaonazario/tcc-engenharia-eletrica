@@ -2,9 +2,9 @@
 
 \section{QUALIDADE DE ENERGIA ELÉTRICA}
 
-A definição de qualidade de energia depende muito da perspectiva. Para uma concessionária a definição se relaciona coma confiança em seu sistema elétrico, já para um fabricante é o funcionamento correto de seu equipamento com base nas características de sua fonte de alimentação \cite{ref:dugan_2004}.
+A definição de qualidade de energia depende muito da perspectiva. Para uma concessionária a definição se relaciona com a confiança em seu sistema elétrico, já para um fabricante é o funcionamento correto de seu equipamento com base nas características de sua fonte de alimentação \cite{ref:dugan_2004}.
 
-Para \citeonline{ref:bollen_2003}, o termo qualidade de energia está relacionado a preocupação com desvio da tensão e corrente em relação aos valores ideais. Esses desvios são classificados em dois tipos: variações, desvios de tensões em escalas menores; e eventos, caracterizados como desvios em grande escala que acarreta interrupções.
+Para \citeonline{ref:bollen_2003}, o termo qualidade de energia está relacionado a preocupação com desvio da tensão e corrente em relação aos valores ideais. Esses desvios são classificados em dois tipos: variações, desvios de tensões em escalas menores; e eventos, caracterizados como desvios em grande escala que acarretam interrupções.
 
 Em consequência disso, a análise da qualidade de energia deve ser voltada para o consumidor. Portanto, um problema de qualidade de energia pode ser definido como aquele que manifesta variações de tensão, corrente ou frequência, resultando assim em uma falha ou um equipamento com mau funcionamento \cite{ref:dugan_2004}.
 
@@ -89,7 +89,7 @@ As faixas de variação da Tensão de Leitura (TL) para pontos de conexão em te
   \fonte{Adaptado de \cite{ref:ANEEL2021}.}
 \end{table}
 
-Considerando 1008 leituras válidas com intervalos de 10 minutos, salvo as leituras expurgadas, os indicadores individuais para tensão em regime permanente são: a Duração Relativa da Transgressão de Tensão Precária (DRP) e a Duração Relativa da Transgressão de Tensão Crítica (DRC). Onde para calcular DRP e DRC segue a \autoref{eq:drp} e \autoref{eq:drc} \cite{ref:ANEEL2021}.
+Considerando 1008 leituras válidas com intervalos de 10 minutos, salvo as leituras expurgadas, os indicadores individuais para tensão em regime permanente são: a Duração Relativa da Transgressão de Tensão Precária (DRP) e a Duração Relativa da Transgressão de Tensão Crítica (DRC). Onde para calcular DRP e DRC segue a \autoref{eq:drp} e \autoref{eq:drc} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DRP = \frac{nlp}{1008}\cdot100
@@ -101,7 +101,8 @@ Considerando 1008 leituras válidas com intervalos de 10 minutos, salvo as leitu
   \label{eq:drc}
 \end{equation}
 
-Em que \cite{ref:ANEEL2021}:
+\noindent
+em que \cite{ref:ANEEL2021}:
 
 \begin{itemize}
   \item nlp = maior valor do número de leituras na faixa precária entre as fases;
@@ -115,14 +116,15 @@ De acordo com o modulo 8 do PRODIST, os limites para os indicadores individuais 
   \item $DRC_{Limite}=0,5\%$.
 \end{itemize}
 
-Caso as medições obtidas estiverem com DRP e DRC com valores superiores aos delimitados pelo PRODIST, a distribuidora deve compensar o titular da unidade consumidora conforme a \autoref{eq:comp} \cite{ref:ANEEL2021}.
+Caso as medições obtidas estiverem com DRP e DRC com valores superiores aos delimitados pelo PRODIST, a distribuidora deve compensar o titular da unidade consumidora conforme a \autoref{eq:comp} \cite{ref:ANEEL2021},
 
 \begin{equation}
   \text { Comp }=\left\lceil\left(\frac{DRP - DRP_{\text {Limite }}}{100}\right) \cdot k_1+\left(\frac{D R C-D R C_{\text {Limite }}}{100}\right) \cdot k_2\right\rceil \cdot EUSD
   \label{eq:comp}
 \end{equation}
 
-Em que \cite{ref:ANEEL2021}:
+\noindent
+em que \cite{ref:ANEEL2021}:
 
 \begin{itemize}
   \item $k_1=0$ se $DRP \leq DRP_{Limite}$ senão $k_1=3$;
@@ -134,28 +136,30 @@ Em que \cite{ref:ANEEL2021}:
 
 Considerando um ângulo de fase $\theta$ entre a corrente e a tensão, o cosseno desse ângulo é denominado fator de potência ($fp$). Sabe-se que, a depender do sinal de $cos\theta$, o $fp$ pode determinar se a corrente está atrasada ou adiantada em relação a tensão. Dessa forma, para um sistema no qual a corrente está atrasada em relação a tensão é dito que o fator de potência é indutivo, em contrapartida, se estiver adiantada o fator de potência é capacitivo \cite{ref:glover_2017}.
 
-O fator de potência pode ser calculado através da \autoref{eq:fp_glover} \cite{ref:glover_2017}:
+O fator de potência pode ser calculado através da \autoref{eq:fp_glover} \cite{ref:glover_2017},
 
 \begin{equation}
   fp = \frac{P}{\sqrt{P^2 + Q^2}}
   \label{eq:fp_glover}
 \end{equation}
 
-Em que \cite{ref:glover_2017}:
+\noindent
+em que \cite{ref:glover_2017}:
 
 \begin{itemize}
   \item $P =$ potência ativa;
   \item $Q =$ potência reativa.
 \end{itemize}
 
-Uma outra forma de calcular o fator de potência é seguindo a \autoref{eq:fp_prodist}, fornecida pelo PRODIST \cite{ref:ANEEL2021}.
+Uma outra forma de calcular o fator de potência é seguindo a \autoref{eq:fp_prodist}, fornecida pelo PRODIST \cite{ref:ANEEL2021},
 
 \begin{equation}
   fp = \frac{EA}{\sqrt{EA^2 + ER^2}}
   \label{eq:fp_prodist}
 \end{equation}
 
-Onde, EA e ER são as energias ativa e reativa, respectivamente \cite{ref:ANEEL2021}.
+\noindent
+em que, EA e ER são as energias ativa e reativa, respectivamente \cite{ref:ANEEL2021}.
 
 O PRODIST determina que, para consumidores do Grupo A com tensão menor que 230 kV, o fator de potência deve estar entre 0,92 e 1,00, tanto para indutivo quanto para capacitivo \cite{ref:ANEEL2021}.
 
@@ -175,57 +179,62 @@ As principais causas de harmônicos em sistemas são \cite{ref:fuchs_2015}:
 
 A presença de equipamentos com características não lineares altera a forma de onda, produzindo ondas não senoidais. Essas formas de ondas podem ser expressas em séries de Fourier, em que cada termo representa um componente harmônico da onda distorcida \cite{ref:fuchs_2015}.
 
-Tanto para as séries de Fourier, como para os harmônicos de uma função não senoidal, existem componentes pares e ímpares que se equivalem. Quando a série de Fourier possui apenas componentes ímpares, quer dizer que o formato de onda dos semiciclos positivos e negativos são iguais. Porém quando existe a presença eventual de componentes pares, significa que existe algum problema no sistema \cite{ref:fuchs_2015}.
+Tanto para as séries de Fourier, como para os harmônicos de uma função não senoidal, existem componentes pares e ímpares que se equivalem. Quando a série de Fourier possui apenas componentes ímpares, quer dizer que o formato de onda dos semiciclos positivos e negativos são iguais. Porém quando existe a presença eventual de componentes pares, significa que pode existir algum problema no sistema \cite{ref:fuchs_2015}.
 
-Quando há presença de harmônicos triplos, denominados harmônicos ímpares múltiplos de 3, significa que existe a presença de corrente na linha de neutro podendo acarretar sobrecarga do respectivo condutor \cite{ref:fuchs_2015}.
+Quando há presença de harmônicos triplos, ou seja, harmônicos ímpares múltiplos de 3, significa que existe a presença de corrente na linha de neutro podendo acarretar sobrecarga do respectivo condutor \cite{ref:fuchs_2015}.
 
 Para o PRODIST, quando há ocorrência de distorções harmônicas o formato da onda analisado possui deformações em comparação com os formatos das tensões e correntes puramente senoidais \cite{ref:ANEEL2021}.
 
-Sendo assim, adotam-se alguns indicadores para as distorções harmônicas, nos quais, para uma ordem h, o indicador de distorção harmônica individual ($DIT_h\%$) pode ser calculado pela \autoref{eq:dit_h} \cite{ref:ANEEL2021}:
+Sendo assim, adotam-se alguns indicadores para as distorções harmônicas, nos quais, para uma ordem h, o indicador de distorção harmônica individual ($DIT_h\%$) pode ser calculado pela \autoref{eq:dit_h} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DIT_h\% = \frac{V_h}{V_1}\cdot 100
   \label{eq:dit_h}
 \end{equation}
 
-Em que $V_h$ corresponde a tensão harmônica de ordem h e $V_1$ é a componente fundamental da tensão \cite{ref:ANEEL2021}.
+\noindent
+em que $V_h$ corresponde a tensão harmônica de ordem h e $V_1$ é a componente fundamental da tensão \cite{ref:ANEEL2021}.
 
-Para calcular a distorção harmônica total de tensão ($DTT\%$) usa a \autoref{eq:dtt} \cite{ref:ANEEL2021}:
+Para calcular a distorção harmônica total de tensão ($DTT\%$) usa a \autoref{eq:dtt} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DTT\% = \frac{\sqrt{\sum_{h=2}^{h_{max}}V_h^2}}{V_1}\cdot 100
   \label{eq:dtt}
 \end{equation}
 
-Para isso, $h$ corresponde as ordens harmônicas que variam de 2 até $h_max$ (ordem harmônica de maior valor), $V_h$ é a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
+\noindent
+para isso, $h$ corresponde as ordens harmônicas que variam de 2 até $h_{max}$ (ordem harmônica de maior valor), $V_h$ é a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
 
-Levando em consideração apenas os componentes pares não múltiplos de 3, o PRODIST determina que a distorção harmônica total de tensão ($DTT_p\%$) deve ser calculada da seguindo a \autoref{eq:dtt_p} \cite{ref:ANEEL2021}:
+Levando em consideração apenas os componentes pares não múltiplos de 3, o PRODIST determina que a distorção harmônica total de tensão ($DTT_p\%$) deve ser calculada da seguindo a \autoref{eq:dtt_p} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DTT_p\% = \frac{\sqrt{\sum_{h=2}^{h_{p}}V_h^2}}{V_1}\cdot 100
   \label{eq:dtt_p}
 \end{equation}
 
-Onde, $h$ representa as ordens harmônicas pares e não múltiplas de 3, com $h_p$ sendo o maior valor da ordem harmônica, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
-Assim como para as componentes pares, as ímpares possuem um indicador de distorção harmônica total de tensão ($DTT_i\%$), determinado pela \autoref{eq:dtt_i} \cite{ref:ANEEL2021}:
+\noindent
+sendo que, $h$ representa as ordens harmônicas pares e não múltiplas de 3, com $h_p$ sendo o maior valor da ordem harmônica, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
+Assim como para as componentes pares, as ímpares possuem um indicador de distorção harmônica total de tensão ($DTT_i\%$), determinado pela \autoref{eq:dtt_i} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DTT_i\% = \frac{\sqrt{\sum_{h=5}^{h_{i}}V_h^2}}{V_1}\cdot 100
   \label{eq:dtt_i}
 \end{equation}
 
-Logo, $h$ simboliza as ordens harmônicas ímpares e não múltiplas de 3 partindo do 5, com $h_i$ sendo o maior valor da ordem harmônica, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
+\noindent
+logo, $h$ simboliza as ordens harmônicas ímpares e não múltiplas de 3 partindo do 5, com $h_i$ sendo o maior valor da ordem harmônica, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
 
-Por último, levando em consideração apenas as componentes múltiplas de 3, o indicador referente é determinado pela \autoref{eq:dtt_3} \cite{ref:ANEEL2021}:
+Por último, levando em consideração apenas as componentes múltiplas de 3, o indicador referente é determinado pela \autoref{eq:dtt_3} \cite{ref:ANEEL2021},
 
 \begin{equation}
   DTT_3\% = \frac{\sqrt{\sum_{h=3}^{h_{3}}V_h^2}}{V_1}\cdot 100
   \label{eq:dtt_3}
 \end{equation}
 
-Sabendo-se que, $h$ representa as ordens harmônicas múltiplas de 3, com $h_3$ como o maior valor da ordem harmônica múltipla de 3, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
+\noindent
+sabendo-se que, $h$ representa as ordens harmônicas múltiplas de 3, com $h_3$ como o maior valor da ordem harmônica múltipla de 3, $V_h$ a tenção harmônica de ordem $h$ e $V_1$ a componente fundamental da tensão \cite{ref:ANEEL2021}.
 
-Levando em consideração as 1008 leituras válidas determinadas pelo PRODIST, deve ser calculado o percentil 95 para os indicadores de distorções harmônicas total de tensão. em seguida, os valores obtidos devem ser comparados com os limites estabelecidos pelo próprio PRODIST, conforme \autoref{tab:limites_distorcoes_harmonicas}, em que $V_n$ é a tensão nominal do sistema \cite{ref:ANEEL2021}.
+Levando em consideração as 1008 leituras válidas determinadas pelo PRODIST, deve ser calculado o percentil 95 para os indicadores de distorções harmônicas total de tensão. Em seguida, os valores obtidos devem ser comparados com os limites estabelecidos pelo próprio PRODIST, conforme \autoref{tab:limites_distorcoes_harmonicas}, em que $V_n$ é a tensão nominal do sistema \cite{ref:ANEEL2021}.
 
 \begin{table}[H]
   \centering
@@ -244,34 +253,36 @@ Levando em consideração as 1008 leituras válidas determinadas pelo PRODIST, d
 
 \subsection{Desequilíbrio de tensão}
 
-O PRODIST define o desequilíbrio de tensão como qualquer alteração nos valores das amplitudes das tensões de fase ou na defasagem de um sistema trifásico \cite{ref:ANEEL2021}. De forma análoga, para \citeonline{ref:fuchs_2015} caso um sistema trifásico não tenha as tensões com valores iguais de amplitude e defasagem de 120 graus entre si, existe um desequilíbrio de tensão nesse sistema.
+O PRODIST define o desequilíbrio de tensão como qualquer alteração nos valores das amplitudes das tensões de fase ou na defasagem de um sistema trifásico \cite{ref:ANEEL2021}. De forma análoga, para \citeonline{ref:fuchs_2015} caso um sistema trifásico não apresente as tensões com valores iguais de amplitude e defasagem de 120 graus entre si, existe um desequilíbrio de tensão nesse sistema.
 
 As principais consequências do desequilíbrio de tensão são mal funcionamento e danos a vida útil dos equipamentos elétricos. Já a principal fonte de desequilíbrio são as cargas elétricas, tanto as lineares (motores de indução) quanto as não lineares (conversores estáticos CA-CC) \cite{ref:paulilo_2013}.
 
-Os dois principais tipos de origens de desequilíbrio de cargas são: estrutural e funcional. O termo estrutural diz respeito a qualquer desequilíbrio na rede, seja transformador ou linhas de transmissão que estejam desbalanceadas. Já funcional remete à presença de cargas desequilibradas na rede, em que as fases não estão corretamente balanceadas \cite{ref:rezende_2012}.
+Os dois principais tipos de origens de desequilíbrio de cargas são: estrutural e funcional. O termo estrutural diz respeito a qualquer desequilíbrio na rede, sejam transformadores ou linhas de transmissão que estejam desbalanceadas. Já funcional remete à presença de cargas desequilibradas na rede, em que as fases não estão corretamente balanceadas \cite{ref:rezende_2012}.
 
-Para calcular o Fator de Desequilíbrio de Tensão ($FD\%$), o PRODIST segue a \autoref{eq:fd_1} \cite{ref:ANEEL2021}.
+Para calcular o Fator de Desequilíbrio de Tensão ($FD\%$), o PRODIST segue a \autoref{eq:fd_1} \cite{ref:ANEEL2021},
 
 \begin{equation}
   FD\% = \frac{V_-}{V_+}\cdot 100
   \label{eq:fd_1}
 \end{equation}
 
-Em que, $V_-$ e $V_+$ são as tensões eficazes para sequência negativa e positiva, respectivamente, considerando a frequência fundamental. Alternativamente, tem-se a \autoref{eq:fd_2} \cite{ref:ANEEL2021}.
+\noindent
+em que, $V_-$ e $V_+$ são as tensões eficazes para sequência negativa e positiva, respectivamente, considerando a frequência fundamental. Alternativamente, tem-se a \autoref{eq:fd_2} \cite{ref:ANEEL2021}.
 
 \begin{equation}
   FD\%=100 \cdot \frac{\sqrt{1-\sqrt{3-6 \beta}}}{\sqrt{1+\sqrt{3-6 \beta}}}
   \label{eq:fd_2}
 \end{equation}
 
-Onde o valor de $\beta$ é determinado pela \autoref{eq:beta} \cite{ref:ANEEL2021}.
+O valor de $\beta$ é determinado pela \autoref{eq:beta} \cite{ref:ANEEL2021},
 
 \begin{equation}  
   \beta=\frac{V_{a b}^4+V_{b c}^4+V_{c a}^4}{\left(V_{a b}^2+V_{b c}^2+V_{c a}^2\right)^2}
   \label{eq:beta}
 \end{equation}
 
-Em que, $V_ab$, $V_bc$ e $V_ca$ são as tensões de linha eficazes para frequência fundamental \cite{ref:ANEEL2021}.
+\noindent
+em que, $V_{ab}$, $V_{bc}$ e $V_{ca}$ são as tensões de linha eficazes para frequência fundamental \cite{ref:ANEEL2021}.
 
 Assim como os outros limites, para o PRODIST deve ser calculado o percentil 95 para os 1008 valores do $FD\%$ obtidos. Com isso, o valor limite para o $FD95\%$ pode ser observado na \autoref{tab:limites_desequilibrio_tensao}, em que $V_n$ é a tensão nominal \cite{ref:ANEEL2021}.
 
@@ -289,16 +300,19 @@ Assim como os outros limites, para o PRODIST deve ser calculado o percentil 95 p
 
 \subsection{Flutuação de tensão}
 
-Quando ocorre mudanças repentinas nos valores de pico ou eficazes da tensão, caracteriza-se esse fenômeno como flutuação de tensão. Para o PRODIST, o indicadores de flutuação são o $P_{st}$, $P_{lt}$ e $P{st}95\%$, com o ultimo sendo o indicador utilizado para verificação do desempenho do sistema, podendo ser calculado pela \autoref{eq:pst} \cite{ref:ANEEL2021}.
+Quando ocorrem mudanças repentinas nos valores de pico ou eficazes da tensão, de forma sistemática ou aleatória, caracteriza-se esse fenômeno como flutuação de tensão. Para o PRODIST, o indicadores de flutuação são o $P_{st}$ e $P_{lt}$, que representam o quanto de cintilação luminosas estão relacionadas a flutuação de tensão para os períodos de 10 minutos e 2 horas, respectivamente \cite{ref:ANEEL2021}.
+
+$P{st}95\%$ é o indicador utilizado para verificação do desempenho do sistema, que condiz com o percentil 95 dos valores calculados para $P{st}$ pela \autoref{eq:pst} \cite{ref:ANEEL2021},
 
 \begin{equation}
 P_{st}=\sqrt{0,0314 P_{0,1}+0,0525 P_1+0,0657 P_3+0,28 P_{10}+0,08 P_{50}}
 \label{eq:pst}
 \end{equation}
 
-Onde, os valores de P, determinam o nível de flutuação de tensão que foi ultrapassado no percentual do tempo referente ao seu indicador \cite{ref:ANEEL2021}.
+\noindent
+em que os valores de P, determinam o nível de flutuação de tensão que foi ultrapassado no percentual do tempo referente ao seu indicador \cite{ref:ANEEL2021}.
 
-O limite para o indicador de flutuação está determinado pela \autoref{tab:limites_flutuacao_tensao}.
+O limite para o indicador de flutuação está determinado pela \autoref{tab:limites_flutuacao_tensao} \cite{ref:ANEEL2021}.
 
 \begin{table}[H]
   \centering
@@ -341,24 +355,24 @@ As bibliotecas mais comuns para a análise de dados são: NumPy; Pandas; e Matpl
 
 \subsection{NumPy}
 
-A NumPy (Numerc Python) é uma biblioteca Python utilizada para cálculos numéricos, onde tem como principal objetivo trabalhar com arrays multidimensionais. A sua versão 1.0 foi lançada no final de 2006 pelo seu fundador, Travis Oliphant \cite{ref:oliphant_2006}.
+A NumPy (\textit{numerc} Python) é uma biblioteca Python utilizada para cálculos numéricos, onde tem como principal objetivo trabalhar com arrays multidimensionais. A sua versão 1.0 foi lançada no final de 2006 pelo seu fundador, Travis Oliphant \cite{ref:oliphant_2006}.
 
-Esses arrays multidimensionais, ou ndarray (N-dimensional array), são objetos com um número de elementos predeterminados, no qual cada elemento possui um conjunto de vetores de mesmo tamanho e cada vetor só possui itens de mesmo tipo de dados \cite{ref:nelli_2023}.
+Esses arrays multidimensionais, ou ndarray (\textit{N-dimensional array}), são objetos com um número de elementos predeterminados, no qual cada elemento possui um conjunto de vetores de mesmo tamanho e cada vetor só possui itens de mesmo tipo de dados \cite{ref:nelli_2023}.
 
 \subsection{Pandas}
 
-Quando se trata de análise de dados o Pandas é uma das bibliotecas mais utilizadas, principalmente por ser open source (código aberto). Essa biblioteca foi desenvolvida por uma grande comunidade de desenvolvedores, sendo primeiramente elaborada por Wes McKinney em 2008.  Destaca-se que, em um nível mais baixo, a biblioteca utiliza-se de várias outras bibliotecas, dentre elas o NumPy \cite{ref:mckinney_2022}.
+No que concerne de análise de dados o Pandas é uma das bibliotecas mais utilizadas, principalmente por ser \textit{open source} (código aberto). Essa biblioteca foi desenvolvida por uma grande comunidade de desenvolvedores, sendo primeiramente elaborada por Wes McKinney em 2008.  Destaca-se que, em um nível mais baixo, a biblioteca utiliza-se de várias outras bibliotecas, dentre elas o NumPy \cite{ref:mckinney_2022}.
 
-O Pandas tem como especialidade trabalhar com DataFrame e Series, sendo essas as duas principais estruturas de dados dessa biblioteca \cite{ref:nelli_2023}.
+O Pandas tem como especialidade trabalhar com \textit{DataFrame} e \textit{Series}, sendo essas as duas principais estruturas de dados dessa biblioteca \cite{ref:nelli_2023}.
 
-As Series são objetos que representam estruturas de dados com uma dimensão, semelhante a arrays porém com funções extras. Já os DataFrame são objetos com estruturas de dados mais complexas, possuindo várias dimensões \cite{ref:nelli_2023}.
+As \textit{Series} são objetos que representam estruturas de dados com uma dimensão, semelhante a arrays porém com funções extras. Já os \textit{DataFrame} são objetos com estruturas de dados mais complexas, possuindo várias dimensões \cite{ref:nelli_2023}.
 
 \subsection{Matplotlib}
 
-A grande especialidade dessa biblioteca é desenvolver visualizações de dados em formato de gráficos em duas dimensões, podendo até desenvolver gráficos 3D. Ela consegue ter resultados similares a gráficos produzidos em softwares como Matlab, podendo exportá-los em vários formatos como PNG, PDF, SVG e ESP \cite{ref:nelli_2023}.
+A grande especialidade dessa biblioteca é desenvolver visualizações de dados em formato de gráficos em duas dimensões, podendo até desenvolver gráficos 3D. Ela consegue ter resultados similares a gráficos produzidos em \textit{softwares} como Matlab, podendo exportá-los em vários formatos como PNG, PDF, SVG e ESP \cite{ref:nelli_2023}.
 
-Para a data science (ciência de dados), o Matplotlib é uma das bibliotecas fundamentais em conjunto com o Pandas e NumPy, tendo ferramentas como o pyplot que tem funções com capacidade de plotar gráficos com qualidade similar ao Matlab \cite{ref:bisong_2019}.
+Para a \textit{data science} (ciência de dados), o Matplotlib é uma das bibliotecas fundamentais em conjunto com o Pandas e NumPy, tendo ferramentas como o pyplot que tem funções com capacidade de plotar gráficos com qualidade similar ao Matlab \cite{ref:bisong_2019}.
 
 \subsection{PySide6}
 
-O PySide6 é a uma biblioteca feita em Python em cima da biblioteca Qt do C++, atualmente desenvolvida pela The Qt Company. Ela tem objetivo criar interfaces gráficas altamente personalizáveis e de grande versatilidade, além de ser uma biblioteca de código aberto e multiplataformas podendo ser executada no Linux, Windows e Mac \cite{ref:fitzpatrick_2022}.
+O PySide6 é a uma biblioteca feita em Python em cima da biblioteca Qt do C++, atualmente desenvolvida pela The Qt Company. Ela tem objetivo criar interfaces gráficas altamente personalizáveis e de grande versatilidade, além de ser uma biblioteca de código aberto e multiplataformas, podendo ser executada no Linux, Windows e Mac \cite{ref:fitzpatrick_2022}.
