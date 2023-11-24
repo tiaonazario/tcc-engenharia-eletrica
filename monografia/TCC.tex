@@ -1,0 +1,50 @@
+\documentclass[12pt, a4paper, brazil, oneside, chapter=TITLE, section=TITLE, sumario=tradicional]{abntex2}
+
+\input{settings/packages.tex}
+\input{settings/pdf.tex}
+\input{settings/inputs.tex}
+
+\begin{document}
+
+\pretextual
+
+\imprimircapa
+\imprimirfolhaderosto
+% \input{contents/pre_textual/ficha_catalografica.tex}
+\includepdf[pages=1]{contents/pre_textual/ficha_catalografica.pdf}
+% \imprimirfolhaaprovacao
+\includepdf[pages=1]{contents/pre_textual/folha_aprovacao.pdf}
+\input{contents/pre_textual/dedicatoria.tex}
+\input{contents/pre_textual/agradecimentos.tex}
+\input{contents/pre_textual/epigrafe.tex}
+\input{contents/pre_textual/resumo.tex}
+\input{contents/pre_textual/abstract.tex}
+\input{contents/pre_textual/listas.tex}
+
+
+\textual
+
+\pagestyle{simple}
+\aliaspagestyle{chapter}{simple}
+
+\input{contents/chapters/introducao.tex}
+\input{contents/chapters/referencial.tex}
+\input{contents/chapters/metodologia.tex}
+\input{contents/chapters/resultados.tex}
+\input{contents/chapters/conclusao.tex}
+
+\postextual
+
+\bibliography{bibliography}
+% \bibliographystyle{abntex2-alf}
+\bibliographystyle{settings/abntex2-alf.bst}
+
+\begin{apendicesenv}
+  \partapendices
+  \input{contents/post_textual/apendice_a.tex}
+  \input{contents/post_textual/apendice_b.tex}
+  \input{contents/post_textual/apendice_c.tex}
+  \input{contents/post_textual/apendice_d.tex}
+\end{apendicesenv}
+
+\end{document}
